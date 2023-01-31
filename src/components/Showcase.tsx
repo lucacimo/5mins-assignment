@@ -30,7 +30,7 @@ const Showcase = ({ movies, searchTerm, loading }: ShowcaseProps) => (
       ) : (
         <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={5}>
           {movies.map((movie) => (
-            <Link to={`/${movie.id}`}>
+            <Link to={`/${movie.id}`} key={movie.id}>
               <GridItem w="100%">
                 <Image
                   width="100%"

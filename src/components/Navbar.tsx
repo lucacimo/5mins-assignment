@@ -27,11 +27,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
+    as={RouterLink}
+    to="/"
     color="white"
     _hover={{
       textDecoration: "none",
     }}
-    href={"#"}
   >
     {children}
   </Link>
@@ -59,9 +60,7 @@ const Navbar = () => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <RouterLink to="/">
-                  <NavLink key={link}>{link}</NavLink>
-                </RouterLink>
+                <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -95,9 +94,7 @@ const Navbar = () => {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <RouterLink to="/">
-                  <NavLink key={link}>{link}</NavLink>
-                </RouterLink>
+                <NavLink key={link}>{link}</NavLink>
               ))}
             </Stack>
           </Box>

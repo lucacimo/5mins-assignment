@@ -23,7 +23,7 @@ const Cast = ({ movie }: CastProps) => (
     </Heading>
     <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={5}>
       {movie.actors.map((actor) => (
-        <GridItem w="100%">
+        <GridItem w="100%" key={actor.name}>
           <Card>
             <Image
               width="100%"
