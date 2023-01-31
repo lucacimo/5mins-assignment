@@ -6,7 +6,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type SearchBarProps = {
   setSearchTerm: Dispatch<SetStateAction<string>>;
@@ -14,7 +21,8 @@ type SearchBarProps = {
 
 const Searchbar = ({ setSearchTerm }: SearchBarProps) => {
   const [state, setState] = useState("");
-  const handleChange = (e: any) => {
+
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
     setState(e.currentTarget.value);
   };
 
