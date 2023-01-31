@@ -1,6 +1,12 @@
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+Add the following key to your .env file in the project root:
+
+REACT_APP_API_KEY="YOUR_TMDB_API_KEY"
+
 ## Available Scripts
 
 In the project directory, you can run:
