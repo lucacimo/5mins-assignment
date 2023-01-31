@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import API, { Movie, Cast, Crew } from "../api/api";
 
-// Types
 export type MovieState = Movie & { actors: Cast[]; directors: Crew[] };
 
 export const useMovieFetch = (movieId: string | any) => {
@@ -17,7 +16,7 @@ export const useMovieFetch = (movieId: string | any) => {
 
         const movie = await API.fetchMovie(movieId);
         const credits = await API.fetchCredits(movieId);
-        // Get directors only
+
         const directors = credits.crew.filter(
           (member) => member.job === "Director"
         );
@@ -36,11 +35,6 @@ export const useMovieFetch = (movieId: string | any) => {
 
     fetchMovie();
   }, [movieId]);
-
-  // Write to sessionStorage
-  useEffect(() => {
-    sessionStorage.setItem(movieId.toString(), JSON.stringify(state));
-  }, [movieId, state]);
 
   return { state, loading, error };
 };

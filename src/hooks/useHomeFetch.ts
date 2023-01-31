@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// API
 import API, { Movie } from "../api/api";
 
 const initialState = {
@@ -32,7 +31,6 @@ export const useHomeFetch = () => {
     setLoading(false);
   };
 
-  // Initial
   useEffect(() => {
     fetchMovies(1);
   }, []);
@@ -43,7 +41,6 @@ export const useHomeFetch = () => {
     fetchMovies(1, searchTerm);
   }, [searchTerm]);
 
-  // Load More Button
   useEffect(() => {
     if (!isLoadingMore) {
       return;
