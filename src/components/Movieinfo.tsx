@@ -76,7 +76,7 @@ const MovieInfo = ({ movie }: MovieInfoProps) => (
             {calcTime(movie.runtime)}
           </Text>
           <Heading color="white" size="md">
-            Rate
+            Rating
           </Heading>
           <Text color="white" py="2" mb={4}>
             {movie.vote_average.toFixed(1)}
