@@ -42,7 +42,7 @@ const Showcase = ({ movies, searchTerm, loading }: ShowcaseProps) => (
                       ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
                       : NoImage
                   }
-                  alt="Caffe Latte"
+                  alt="slide"
                 />
               </GridItem>
             </Link>

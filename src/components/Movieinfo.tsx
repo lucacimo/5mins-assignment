@@ -42,13 +42,12 @@ const MovieInfo = ({ movie }: MovieInfoProps) => (
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         maxW={{ base: "100%", md: "250px", sm: "100%" }}
-        maxHeight={{ md: "400px" }}
         src={
           movie.poster_path
             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
             : NoImage
         }
-        alt="Caffe Latte"
+        alt="cover-image"
       />
 
       <Stack>

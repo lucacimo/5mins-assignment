@@ -35,7 +35,7 @@ const Cast = ({ movie }: CastProps) => (
                   ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
                   : NoImage
               }
-              alt="Caffe Latte"
+              alt="cast"
             />
             <CardBody>
               <Text fontWeight="bold">{actor.name}</Text>
