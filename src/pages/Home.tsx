@@ -3,13 +3,14 @@ import Searchbar from "../components/Searchbar";
 import { Box } from "@chakra-ui/react";
 import Showcase from "../components/Showcase";
 import { useHomeFetch } from "../hooks/useHomeFetch";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
+import { debounce } from "../utils/utils";
 
 const HomePage = () => {
   const { state, error, searchTerm, loading, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
 
-  const onScroll = useCallback(() => {
+  const onScroll = debounce(() => {
     const scrollTop = document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
@@ -17,12 +18,12 @@ const HomePage = () => {
     if (scrollTop + clientHeight >= scrollHeight) {
       setIsLoadingMore(true);
     }
-  }, [setIsLoadingMore]);
+  }, 500);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [onScroll]);
+  }, []);
 
   if (error) {
     return (
