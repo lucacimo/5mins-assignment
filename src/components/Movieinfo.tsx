@@ -51,34 +51,28 @@ const MovieInfo = ({ movie }: MovieInfoProps) => (
       />
 
       <Stack>
-        <CardBody>
-          <Heading color="white" size="xl" mb={4}>
+        <CardBody color="white">
+          <Heading size="xl" mb={4}>
             {movie.title}
           </Heading>
-          <Heading color="white" size="md">
-            Plot
-          </Heading>
-          <Text color="white" py="2" mb={4}>
+          <Heading size="md">Plot</Heading>
+          <Text py="2" mb={4}>
             {movie.overview}
           </Text>
-          <Heading color="white" size="md">
+          <Heading size="md">
             Director{movie.directors.length > 1 ? "S" : ""}
           </Heading>
           {movie.directors.map((director) => (
-            <Text color="white" key={director.credit_id} py="2" mb={4}>
+            <Text key={director.credit_id} py="2" mb={4}>
               {director.name}
             </Text>
           ))}
-          <Heading color="white" size="md">
-            Duration
-          </Heading>
-          <Text color="white" py="2" mb={4}>
+          <Heading size="md">Duration</Heading>
+          <Text py="2" mb={4}>
             {calcTime(movie.runtime)}
           </Text>
-          <Heading color="white" size="md">
-            Rating
-          </Heading>
-          <Text color="white" py="2" mb={4}>
+          <Heading size="md">Rating</Heading>
+          <Text py="2" mb={4}>
             {movie.vote_average.toFixed(1)}
           </Text>
         </CardBody>
