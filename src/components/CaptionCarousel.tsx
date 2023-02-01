@@ -49,7 +49,7 @@ const CaptionCarousel = ({ movies }: CaptionCarouselProps) => {
     title: movie.original_title,
     text: movie.overview,
     image: movie.backdrop_path
-      ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.poster_path}`
+      ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path}`
       : NoImage,
   }));
 
