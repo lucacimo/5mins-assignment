@@ -47,7 +47,7 @@ const Searchbar = ({ setSearchTerm }: SearchBarProps) => {
           children={<SearchIcon color="gray.300" />}
         />
         <Input
-          type="tel"
+          type="text"
           placeholder="Search movie"
           onChange={handleChange}
           color="white"
