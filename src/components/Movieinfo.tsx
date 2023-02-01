@@ -25,7 +25,7 @@ const MovieInfo = ({ movie }: MovieInfoProps) => (
     backgroundRepeat="no-repeat"
     backgroundSize="cover"
     backgroundImage={`url(${
-      movie.poster_path
+      movie.backdrop_path
         ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path}`
         : NoImage
     })`}
